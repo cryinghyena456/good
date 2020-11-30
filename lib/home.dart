@@ -1,6 +1,8 @@
 import 'dart:ui';
 
+import 'package:clone/secondpage.dart';
 import 'package:flutter/material.dart';
+import 'package:splashscreen/splashscreen.dart';
 
 
 class Home extends StatefulWidget {
@@ -11,10 +13,21 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Image(image: AssetImage('assets/day.png')),
-      ),
+    return new SplashScreen(
+        seconds: 14,
+        navigateAfterSeconds: new LoginScreen(),
+        title: new Text('Welcome In SplashScreen'),
+        image:
+        new Image.asset('assets/logo.jpeg'),
+        backgroundColor: Colors.blue,
+        styleTextUnderTheLoader: new TextStyle(),
+        photoSize: 100.0,
+        loaderColor: Colors.red
     );
+
+
+
+
+
   }
 }
